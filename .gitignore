@@ -1,3 +1,4 @@
 app.txt
 node_modules
 logs
+.env
