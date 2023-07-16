@@ -4,12 +4,11 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const app = express();
 const path = require("path");
-const {logger} = require("./middleware/logger");
+const { logger, logEvents } = require("./middleware/logger");
 const errorHandler = require("./middleware/errorHandler");
 const corsOptions = require("./config/corsOptions");
 const connectDB = require('./config/dbConn');
 const mongoose = require('mongoose');
-const {logEvents} = require('./middleware/logger'); 
 const PORT = process.env.PORT || 3500;
 
 dotenv.config();
@@ -20,7 +19,7 @@ connectDB();
 //middleware
 app.use(logger);
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 

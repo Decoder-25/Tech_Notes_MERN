@@ -14,7 +14,7 @@ const getAllUsers = asyncHandler(async (req, res) => {
     res.json(users);
 });
 
-// @desc Get new user
+// @desc Create new user
 // @route POST /users
 // @access Private
 const createNewUser = asyncHandler(async (req, res) => {
